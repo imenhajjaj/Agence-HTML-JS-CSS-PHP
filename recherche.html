@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="travel/css/style.css" />
+    <link rel="stylesheet" href="css/style.css"/>
+
+    <title>Document</title>
+</head>
+
+    
+
+
+<?php         
+
+$servername = "127.0.0.1";       
+$username = "root";           
+$password = "";             
+$dbname = "registration";           
+
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+if($conn->connect_error){
+    die("Connection failed: " . $conn->connect_error);   
+}
+
+$name="";
+$email="";
+$tel="";
+
+function getPosts()
+{ 
+    $posts=array();
+    $posts[0]= $_POST['name'];
+    $posts[1]= $_POST['email'];
+
+    return $posts;
+    }
+    if (isset($_POST['recherche']))
+    { 
+        $data = getPosts();
+
+        $search_Query ="SELECT * FROM users where username LIKE '$data[0]'";   
+    
+        $search_Result=mysqli_query ($conn,$search_Query);
+
+        if($search_Result)
+        {
+            while($row = mysqli_fetch_array($search_Result))
+            {
+                $name=$row['username'];
+                $email=$row['email'];
+            }
+        }else {
+            echo 'no data for this nom';
+        }
+    }else{
+        echo '';
+    }
+?> 
+<body>  
+    <div class="form1">
+    <form method="POST" action="" >
+    <h1>rechercher votre hotel</h1>
+        <fieldset>
+            <legend>saisir nom d'hotel</legend>
+            <label>name :</label><input type="text" name="name" value="<?php echo $name;?>" placeholder="name" style="width:400px" height="80%"><br>
+            <label>result :</label><input type="text" name="email" placeholder="" style="width: 400px;" value="<?php echo $email;?>"  placeholder=""><br>
+        </fieldset>
+      
+        <input type="submit" name="recherche" value="recherche">
+</form>
+
+
+    </div>
+    <section class="about" id="about">
+  <div class="video-container" data-aos="fade-right" data-aos-delay="300">
+      <video src="travel/images/about-vid-11.mp4" muted autoplay loop class="video"></video>
+      <div class="controls">
+          <span class="control-btn" data-src="images/about-vid-1.mp4"></span>
+          <span class="control-btn" data-src="images/about-vid-2.mp4"></span>
+          <span class="control-btn" data-src="images/about-vid-3.mp4"></span>
+      </div>
+  </div>
+  <div class="content" data-aos="fade-left" data-aos-delay="600">
+      <span>why choose us?</span>
+      <h3>Nature's Majesty Awaits You</h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde fugit repellat error deserunt nam aperiam odit libero quos provident. Nostrum?</p>
+      <a href="#" class="btn">read more</a>
+  </div>  
+</section>
+ </body>
+
+</html>
+
+
+

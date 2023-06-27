@@ -1,0 +1,74 @@
+
+
+
+.txt {
+    width: 50%;
+    height: 150%;
+    background: #897f7f;
+    position: relative;
+}
+
+
+h1{
+    position: relative;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    font-size: 80px;
+    font-family: 'Lato';
+}
+
+#typed {
+    margin-top: 50%;
+    color: rgb(166, 29, 29);
+    font-family: 'Abril Fatface';
+}
+
+.about .video-container video {
+    border-radius: 1rem;
+    width: 80%;
+  }
+  
+  .about .video-container .controls {
+    text-align: center;
+    padding: 2rem 0;
+  }
+  
+  .about .video-container .controls span {
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    margin: .7rem;
+  }
+  
+  .about .video-container .controls span:hover {
+    background: #4c5857;
+  }
+  
+  .about .content {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 42rem;
+            flex: 1 1 42rem;
+    margin-bottom: 5rem;
+  }
+  
+  .about .content span {
+    color: #3d4444;
+    font-size: 2rem;
+  }
+  
+  .about .content h3 {
+    color: rgb(92, 87, 87);
+    font-size: 4rem;
+    margin-top: .5rem;
+  }
+  
+  .about .content p {
+    padding: 1rem 0;
+    font-size: 1.4rem;
+    color: rgb(102, 99, 99);
+    line-height: 2;
+  }
